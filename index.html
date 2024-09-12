@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <header>
+        <h1>My E-Commerce Website</h1>
+    </header>
+
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/catalog.html">Product Catalog</a>
+        <a href="/register.html">Register/Login</a>
+    </nav>
+
+    <div class="container" id="home">
+       <font size="10" color="red">Welcome to Our Store</font>
+        <p>Your one-stop shop for Electronics</p>
+    </div>
+
+      <script>
+        // Client-Side Validation
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var email = document.getElementById('email').value;
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                event.preventDefault();
+            } else if (!email.match(emailPattern)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            } else if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
